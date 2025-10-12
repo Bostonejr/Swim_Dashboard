@@ -563,10 +563,10 @@ const SwimDashboard = () => {
               <div className="mt-4 grid grid-cols-2 gap-4">
                 <div className="bg-green-50 p-4 rounded-lg">
                   <p className="text-sm text-green-800 font-semibold">
-                    Best Performance
+                    Best Performance (AT)
                   </p>
                   <p className="text-2xl font-bold text-green-900">
-                    4.61s (Kofi, T4)
+                    5.96s (Kobby, T4)
                   </p>
                 </div>
                 <div className="bg-blue-50 p-4 rounded-lg">
