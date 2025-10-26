@@ -1035,6 +1035,9 @@ const SundayDashboard = () => {
                 </BarChart>
               </ResponsiveContainer>
             </div>
+            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
+              <h3>Developed by Emmanuel-Paul</h3>
+            </div>
           </div>
         )}
 
@@ -1363,6 +1366,9 @@ const SundayDashboard = () => {
                   ))}
                 </ul>
               </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
+              <h3>Developed by Emmanuel-Paul</h3>
             </div>
           </div>
         )}
@@ -1728,567 +1734,616 @@ const SundayDashboard = () => {
                 </div>
               </div>
             </div>
+            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
+              <h3>Developed by Emmanuel-Paul</h3>
+            </div>
           </div>
         )}
 
         {/* Key & Definitions Tab */}
         {activeTab === "key" && (
-          <div className="bg-white rounded-xl shadow-xl p-6">
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">
-              Dashboard Key & Definitions
-            </h2>
+          <div className="space-y-6">
+            <div className="bg-white rounded-xl shadow-xl p-6">
+              <h2 className="text-3xl font-bold text-blue-900 mb-6">
+                Dashboard Key & Definitions
+              </h2>
 
-            <div className="space-y-8">
-              {/* Abbreviations */}
-              <div>
-                <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
-                  Abbreviations
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                  <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                    <span className="font-bold text-blue-600 text-lg">IM</span>
-                    <span className="text-gray-700">Individual Medley</span>
-                  </div>
-                  <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                    <span className="font-bold text-blue-600 text-lg">Fly</span>
-                    <span className="text-gray-700">Butterfly stroke</span>
-                  </div>
-                  <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                    <span className="font-bold text-blue-600 text-lg">Fr</span>
-                    <span className="text-gray-700">Freestyle stroke</span>
-                  </div>
-                  <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                    <span className="font-bold text-blue-600 text-lg">s</span>
-                    <span className="text-gray-700">Seconds</span>
-                  </div>
-                  <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                    <span className="font-bold text-blue-600 text-lg">m</span>
-                    <span className="text-gray-700">Meters</span>
-                  </div>
-                  <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                    <span className="font-bold text-blue-600 text-lg">Rep</span>
-                    <span className="text-gray-700">Repetition</span>
+              <div className="space-y-8">
+                {/* Abbreviations */}
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
+                    Abbreviations
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
+                      <span className="font-bold text-blue-600 text-lg">
+                        IM
+                      </span>
+                      <span className="text-gray-700">Individual Medley</span>
+                    </div>
+                    <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
+                      <span className="font-bold text-blue-600 text-lg">
+                        Fly
+                      </span>
+                      <span className="text-gray-700">Butterfly stroke</span>
+                    </div>
+                    <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
+                      <span className="font-bold text-blue-600 text-lg">
+                        Fr
+                      </span>
+                      <span className="text-gray-700">Freestyle stroke</span>
+                    </div>
+                    <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
+                      <span className="font-bold text-blue-600 text-lg">s</span>
+                      <span className="text-gray-700">Seconds</span>
+                    </div>
+                    <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
+                      <span className="font-bold text-blue-600 text-lg">m</span>
+                      <span className="text-gray-700">Meters</span>
+                    </div>
+                    <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
+                      <span className="font-bold text-blue-600 text-lg">
+                        Rep
+                      </span>
+                      <span className="text-gray-700">Repetition</span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Set Definitions */}
-              <div>
-                <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
-                  Set Definitions
-                </h3>
-                <div className="space-y-4">
-                  <div className="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
-                    <h4 className="font-bold text-blue-900 text-lg mb-2">
-                      200m Individual Medley (IM)
-                    </h4>
-                    <p className="text-gray-700 mb-2">
-                      A race combining all four competitive swimming strokes in
-                      this order:
-                    </p>
-                    <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
-                      <li>
-                        <strong>50m Butterfly:</strong> Most technically
-                        demanding, requires timing and power
-                      </li>
-                      <li>
-                        <strong>50m Backstroke:</strong> Only stroke starting in
-                        water, tests body position
-                      </li>
-                      <li>
-                        <strong>50m Breaststroke:</strong> Slowest stroke,
-                        requires patience and technique
-                      </li>
-                      <li>
-                        <strong>50m Freestyle:</strong> Fastest stroke, tests
-                        finishing speed
-                      </li>
-                    </ul>
-                    <p className="text-sm text-blue-800 mt-2">
-                      The IM is called "the ultimate test" because it requires
-                      proficiency in all strokes plus strategic pacing.
-                    </p>
-                  </div>
+                {/* Set Definitions */}
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
+                    Set Definitions
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
+                      <h4 className="font-bold text-blue-900 text-lg mb-2">
+                        200m Individual Medley (IM)
+                      </h4>
+                      <p className="text-gray-700 mb-2">
+                        A race combining all four competitive swimming strokes
+                        in this order:
+                      </p>
+                      <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                        <li>
+                          <strong>50m Butterfly:</strong> Most technically
+                          demanding, requires timing and power
+                        </li>
+                        <li>
+                          <strong>50m Backstroke:</strong> Only stroke starting
+                          in water, tests body position
+                        </li>
+                        <li>
+                          <strong>50m Breaststroke:</strong> Slowest stroke,
+                          requires patience and technique
+                        </li>
+                        <li>
+                          <strong>50m Freestyle:</strong> Fastest stroke, tests
+                          finishing speed
+                        </li>
+                      </ul>
+                      <p className="text-sm text-blue-800 mt-2">
+                        The IM is called "the ultimate test" because it requires
+                        proficiency in all strokes plus strategic pacing.
+                      </p>
+                    </div>
 
-                  <div className="bg-purple-50 p-5 rounded-lg border-l-4 border-purple-500">
-                    <h4 className="font-bold text-purple-900 text-lg mb-2">
-                      Front End 25m Butterfly (With Dive)
-                    </h4>
-                    <p className="text-gray-700 mb-2">
-                      Sprint butterfly from a racing dive off the starting
-                      blocks. Tests:
-                    </p>
-                    <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
-                      <li>
-                        <strong>Explosive power:</strong> Ability to generate
-                        maximum speed quickly
-                      </li>
-                      <li>
-                        <strong>Dive technique:</strong> Entry angle,
-                        streamline, breakout timing
-                      </li>
-                      <li>
-                        <strong>Sprint butterfly mechanics:</strong> High stroke
-                        rate with power
-                      </li>
-                    </ul>
-                    <p className="text-sm text-purple-800 mt-2">
-                      This simulates race start conditions and is crucial for
-                      competitive swimming.
-                    </p>
-                  </div>
+                    <div className="bg-purple-50 p-5 rounded-lg border-l-4 border-purple-500">
+                      <h4 className="font-bold text-purple-900 text-lg mb-2">
+                        Front End 25m Butterfly (With Dive)
+                      </h4>
+                      <p className="text-gray-700 mb-2">
+                        Sprint butterfly from a racing dive off the starting
+                        blocks. Tests:
+                      </p>
+                      <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                        <li>
+                          <strong>Explosive power:</strong> Ability to generate
+                          maximum speed quickly
+                        </li>
+                        <li>
+                          <strong>Dive technique:</strong> Entry angle,
+                          streamline, breakout timing
+                        </li>
+                        <li>
+                          <strong>Sprint butterfly mechanics:</strong> High
+                          stroke rate with power
+                        </li>
+                      </ul>
+                      <p className="text-sm text-purple-800 mt-2">
+                        This simulates race start conditions and is crucial for
+                        competitive swimming.
+                      </p>
+                    </div>
 
-                  <div className="bg-pink-50 p-5 rounded-lg border-l-4 border-pink-500">
-                    <h4 className="font-bold text-pink-900 text-lg mb-2">
-                      Back End 25m Butterfly (Dead Start)
-                    </h4>
-                    <p className="text-gray-700 mb-2">
-                      Sprint butterfly from a wall push-off with no dive. Tests:
-                    </p>
-                    <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
-                      <li>
-                        <strong>Explosive power from a static position:</strong>{" "}
-                        Leg drive and streamline position
-                      </li>
-                      <li>
-                        <strong>Underwater technique:</strong> Dolphin kicks and
-                        breakout
-                      </li>
-                      <li>
-                        <strong>Pure stroke power:</strong> Speed without
-                        momentum from dive
-                      </li>
-                    </ul>
-                    <p className="text-sm text-pink-800 mt-2">
-                      Times are typically 3-5s slower than front end. Larger
-                      gaps indicate wall technique deficiency.
-                    </p>
+                    <div className="bg-pink-50 p-5 rounded-lg border-l-4 border-pink-500">
+                      <h4 className="font-bold text-pink-900 text-lg mb-2">
+                        Back End 25m Butterfly (Dead Start)
+                      </h4>
+                      <p className="text-gray-700 mb-2">
+                        Sprint butterfly from a wall push-off with no dive.
+                        Tests:
+                      </p>
+                      <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                        <li>
+                          <strong>
+                            Explosive power from a static position:
+                          </strong>{" "}
+                          Leg drive and streamline position
+                        </li>
+                        <li>
+                          <strong>Underwater technique:</strong> Dolphin kicks
+                          and breakout
+                        </li>
+                        <li>
+                          <strong>Pure stroke power:</strong> Speed without
+                          momentum from dive
+                        </li>
+                      </ul>
+                      <p className="text-sm text-pink-800 mt-2">
+                        Times are typically 3-5s slower than front end. Larger
+                        gaps indicate wall technique deficiency.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Key Metrics Explained */}
-              <div>
-                <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
-                  Key Metrics Explained
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-2">Time</h4>
-                    <p className="text-sm text-gray-700">
-                      How long it takes to complete the distance. Lower is
-                      better. Measured in seconds (e.g., 14.06s).
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-2">Pace</h4>
-                    <p className="text-sm text-gray-700">
-                      Average time per 50m segment. Helps compare efforts of
-                      different distances (e.g., 48.33s per 50m).
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      Improvement %
-                    </h4>
-                    <p className="text-sm text-gray-700">
-                      Percentage change from first to last rep. Positive means
-                      getting faster (good). Shows adaptation ability.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      Variance
-                    </h4>
-                    <p className="text-sm text-gray-700">
-                      Difference between best and worst time. Lower variance =
-                      better consistency and technique control.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      Dive Advantage
-                    </h4>
-                    <p className="text-sm text-gray-700">
-                      Time difference between front end (dive) and back end
-                      (wall). Typical: 3-5s. Higher = wall technique needs work.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      Consistency Rating
-                    </h4>
-                    <p className="text-sm text-gray-700">
-                      Elite: &lt;3s variance. Good: 3-5s. Moderate: 5-7s. Poor:
-                      7s+. Measures technical stability.
-                    </p>
+                {/* Key Metrics Explained */}
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
+                    Key Metrics Explained
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-800 mb-2">Time</h4>
+                      <p className="text-sm text-gray-700">
+                        How long it takes to complete the distance. Lower is
+                        better. Measured in seconds (e.g., 14.06s).
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-800 mb-2">Pace</h4>
+                      <p className="text-sm text-gray-700">
+                        Average time per 50m segment. Helps compare efforts of
+                        different distances (e.g., 48.33s per 50m).
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-800 mb-2">
+                        Improvement %
+                      </h4>
+                      <p className="text-sm text-gray-700">
+                        Percentage change from first to last rep. Positive means
+                        getting faster (good). Shows adaptation ability.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-800 mb-2">
+                        Variance
+                      </h4>
+                      <p className="text-sm text-gray-700">
+                        Difference between best and worst time. Lower variance =
+                        better consistency and technique control.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-800 mb-2">
+                        Dive Advantage
+                      </h4>
+                      <p className="text-sm text-gray-700">
+                        Time difference between front end (dive) and back end
+                        (wall). Typical: 3-5s. Higher = wall technique needs
+                        work.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-800 mb-2">
+                        Consistency Rating
+                      </h4>
+                      <p className="text-sm text-gray-700">
+                        Elite: &lt;3s variance. Good: 3-5s. Moderate: 5-7s.
+                        Poor: 7s+. Measures technical stability.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Understanding the Graphs */}
-              <div>
-                <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
-                  How to Read the Graphs
-                </h3>
-                <div className="space-y-4">
-                  <div className="bg-blue-50 p-5 rounded-lg">
-                    <h4 className="font-semibold text-blue-900 mb-2">
-                      📈 Line Graphs (Time Over Reps)
-                    </h4>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>
-                        <strong>Downward slope = Getting faster (good!)</strong>{" "}
-                        - Shows you're warming up or learning
-                      </li>
-                      <li>
-                        <strong>Upward slope = Getting slower</strong> - Usually
-                        means fatigue or technique breakdown
-                      </li>
-                      <li>
-                        <strong>Flat line = Consistency</strong> - Good pacing
-                        control and stable technique
-                      </li>
-                      <li>
-                        <strong>Jagged/spiky = Inconsistency</strong> - Pacing
-                        issues or unstable technique
-                      </li>
-                    </ul>
-                  </div>
+                {/* Understanding the Graphs */}
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
+                    How to Read the Graphs
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="bg-blue-50 p-5 rounded-lg">
+                      <h4 className="font-semibold text-blue-900 mb-2">
+                        📈 Line Graphs (Time Over Reps)
+                      </h4>
+                      <ul className="space-y-2 text-gray-700">
+                        <li>
+                          <strong>
+                            Downward slope = Getting faster (good!)
+                          </strong>{" "}
+                          - Shows you're warming up or learning
+                        </li>
+                        <li>
+                          <strong>Upward slope = Getting slower</strong> -
+                          Usually means fatigue or technique breakdown
+                        </li>
+                        <li>
+                          <strong>Flat line = Consistency</strong> - Good pacing
+                          control and stable technique
+                        </li>
+                        <li>
+                          <strong>Jagged/spiky = Inconsistency</strong> - Pacing
+                          issues or unstable technique
+                        </li>
+                      </ul>
+                    </div>
 
-                  <div className="bg-purple-50 p-5 rounded-lg">
-                    <h4 className="font-semibold text-purple-900 mb-2">
-                      📊 Bar Charts (Individual Reps)
-                    </h4>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>
-                        <strong>Tall bars = Slower times</strong> - Areas
-                        needing improvement
-                      </li>
-                      <li>
-                        <strong>Short bars = Faster times</strong> - Your
-                        strengths to build on
-                      </li>
-                      <li>
-                        <strong>Similar height bars = Consistency</strong> -
-                        Good technique control
-                      </li>
-                      <li>
-                        <strong>Big differences = Variability</strong> - Focus
-                        needed on consistency
-                      </li>
-                    </ul>
-                  </div>
+                    <div className="bg-purple-50 p-5 rounded-lg">
+                      <h4 className="font-semibold text-purple-900 mb-2">
+                        📊 Bar Charts (Individual Reps)
+                      </h4>
+                      <ul className="space-y-2 text-gray-700">
+                        <li>
+                          <strong>Tall bars = Slower times</strong> - Areas
+                          needing improvement
+                        </li>
+                        <li>
+                          <strong>Short bars = Faster times</strong> - Your
+                          strengths to build on
+                        </li>
+                        <li>
+                          <strong>Similar height bars = Consistency</strong> -
+                          Good technique control
+                        </li>
+                        <li>
+                          <strong>Big differences = Variability</strong> - Focus
+                          needed on consistency
+                        </li>
+                      </ul>
+                    </div>
 
-                  <div className="bg-green-50 p-5 rounded-lg">
-                    <h4 className="font-semibold text-green-900 mb-2">
-                      🎯 Best Time vs Average Lines
-                    </h4>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>
-                        <strong>Green line (Best Time):</strong> The fastest
-                        swimmer in each rep - team goal to reach
-                      </li>
-                      <li>
-                        <strong>Blue/Purple/Pink line (Average):</strong> Where
-                        most of the team is performing
-                      </li>
-                      <li>
-                        <strong>Gap between lines:</strong> Shows team
-                        performance spread - smaller is better
-                      </li>
-                    </ul>
+                    <div className="bg-green-50 p-5 rounded-lg">
+                      <h4 className="font-semibold text-green-900 mb-2">
+                        🎯 Best Time vs Average Lines
+                      </h4>
+                      <ul className="space-y-2 text-gray-700">
+                        <li>
+                          <strong>Green line (Best Time):</strong> The fastest
+                          swimmer in each rep - team goal to reach
+                        </li>
+                        <li>
+                          <strong>Blue/Purple/Pink line (Average):</strong>{" "}
+                          Where most of the team is performing
+                        </li>
+                        <li>
+                          <strong>Gap between lines:</strong> Shows team
+                          performance spread - smaller is better
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Color Legend */}
-              <div>
-                <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
-                  Color Legend
-                </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  <div className="flex items-center space-x-2 bg-green-50 p-3 rounded-lg border border-green-300">
-                    <div className="w-6 h-6 bg-green-500 rounded"></div>
-                    <span className="text-sm text-gray-700">
-                      Best Time / Strengths
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-blue-50 p-3 rounded-lg border border-blue-300">
-                    <div className="w-6 h-6 bg-blue-500 rounded"></div>
-                    <span className="text-sm text-gray-700">
-                      IM Performance / Average
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-purple-50 p-3 rounded-lg border border-purple-300">
-                    <div className="w-6 h-6 bg-purple-500 rounded"></div>
-                    <span className="text-sm text-gray-700">Fly Front End</span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-pink-50 p-3 rounded-lg border border-pink-300">
-                    <div className="w-6 h-6 bg-pink-500 rounded"></div>
-                    <span className="text-sm text-gray-700">Fly Back End</span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-yellow-50 p-3 rounded-lg border border-yellow-300">
-                    <div className="w-6 h-6 bg-yellow-500 rounded"></div>
-                    <span className="text-sm text-gray-700">
-                      Pace / Warnings
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-red-50 p-3 rounded-lg border border-red-300">
-                    <div className="w-6 h-6 bg-red-500 rounded"></div>
-                    <span className="text-sm text-gray-700">
-                      Areas to Improve
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-orange-50 p-3 rounded-lg border border-orange-300">
-                    <div className="w-6 h-6 bg-orange-500 rounded"></div>
-                    <span className="text-sm text-gray-700">
-                      Dive Advantage
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-cyan-50 p-3 rounded-lg border border-cyan-300">
-                    <div className="w-6 h-6 bg-cyan-500 rounded"></div>
-                    <span className="text-sm text-gray-700">
-                      Active Selection
-                    </span>
+                {/* Color Legend */}
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
+                    Color Legend
+                  </h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div className="flex items-center space-x-2 bg-green-50 p-3 rounded-lg border border-green-300">
+                      <div className="w-6 h-6 bg-green-500 rounded"></div>
+                      <span className="text-sm text-gray-700">
+                        Best Time / Strengths
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-blue-50 p-3 rounded-lg border border-blue-300">
+                      <div className="w-6 h-6 bg-blue-500 rounded"></div>
+                      <span className="text-sm text-gray-700">
+                        IM Performance / Average
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-purple-50 p-3 rounded-lg border border-purple-300">
+                      <div className="w-6 h-6 bg-purple-500 rounded"></div>
+                      <span className="text-sm text-gray-700">
+                        Fly Front End
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-pink-50 p-3 rounded-lg border border-pink-300">
+                      <div className="w-6 h-6 bg-pink-500 rounded"></div>
+                      <span className="text-sm text-gray-700">
+                        Fly Back End
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-yellow-50 p-3 rounded-lg border border-yellow-300">
+                      <div className="w-6 h-6 bg-yellow-500 rounded"></div>
+                      <span className="text-sm text-gray-700">
+                        Pace / Warnings
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-red-50 p-3 rounded-lg border border-red-300">
+                      <div className="w-6 h-6 bg-red-500 rounded"></div>
+                      <span className="text-sm text-gray-700">
+                        Areas to Improve
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-orange-50 p-3 rounded-lg border border-orange-300">
+                      <div className="w-6 h-6 bg-orange-500 rounded"></div>
+                      <span className="text-sm text-gray-700">
+                        Dive Advantage
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-cyan-50 p-3 rounded-lg border border-cyan-300">
+                      <div className="w-6 h-6 bg-cyan-500 rounded"></div>
+                      <span className="text-sm text-gray-700">
+                        Active Selection
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Technical Terms */}
-              <div>
-                <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
-                  Important Swimming Terms
-                </h3>
-                <div className="space-y-3">
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-1">
-                      Streamline
-                    </h4>
-                    <p className="text-sm text-gray-700">
-                      Body position with arms extended overhead, hands
-                      overlapped, body straight and tight. Most hydrodynamic
-                      position in swimming.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-1">
-                      Breakout
-                    </h4>
-                    <p className="text-sm text-gray-700">
-                      The moment when a swimmer surfaces and begins taking
-                      strokes after being underwater (from dive or push-off).
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-1">
-                      Dolphin Kick
-                    </h4>
-                    <p className="text-sm text-gray-700">
-                      Underwater kick where both legs move together in a
-                      wave-like motion. Used in butterfly and underwater phases.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-1">
-                      Negative Split
-                    </h4>
-                    <p className="text-sm text-gray-700">
-                      Swimming the second half of a race faster than the first
-                      half. Shows good pacing and race strategy.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-1">
-                      Stroke Count
-                    </h4>
-                    <p className="text-sm text-gray-700">
-                      Number of strokes taken to complete a distance. Lower
-                      count usually means better efficiency (longer, more
-                      powerful strokes).
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-1">
-                      Dead Start
-                    </h4>
-                    <p className="text-sm text-gray-700">
-                      Starting in the water (no dive). Tests pure swimming
-                      ability without dive momentum.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* How to Use This Dashboard */}
-              <div className="bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-lg border-2 border-cyan-300">
-                <h3 className="text-2xl font-semibold text-blue-900 mb-4">
-                  🏊 How to Use This Dashboard
-                </h3>
-                <ol className="space-y-3 text-gray-800">
-                  <li className="flex items-start gap-3">
-                    <span className="font-bold text-cyan-600 text-xl">1.</span>
-                    <div>
-                      <strong>Start with Team Overview:</strong> See where you
-                      stand compared to teammates. Look at best times (your
-                      goal) and average times (typical performance).
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="font-bold text-cyan-600 text-xl">2.</span>
-                    <div>
-                      <strong>Check Your Individual Performance:</strong> Select
-                      your name to see detailed graphs of your times. Look for
-                      patterns - are you improving or slowing down?
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="font-bold text-cyan-600 text-xl">3.</span>
-                    <div>
-                      <strong>Read Your Analysis:</strong> Carefully review your
-                      strengths, weaknesses, and recommendations. These are
-                      personalized for YOU based on YOUR data.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="font-bold text-cyan-600 text-xl">4.</span>
-                    <div>
-                      <strong>Set Specific Goals:</strong> Pick 1-2
-                      recommendations to focus on this week. Small, consistent
-                      improvements lead to big results.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="font-bold text-cyan-600 text-xl">5.</span>
-                    <div>
-                      <strong>Track Your Progress:</strong> Compare your
-                      performance to previous sessions. Celebrate improvements,
-                      identify areas still needing work.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="font-bold text-cyan-600 text-xl">6.</span>
-                    <div>
-                      <strong>Review Session Insights:</strong> Understand
-                      broader patterns across the whole team and why certain
-                      workouts are designed the way they are.
-                    </div>
-                  </li>
-                </ol>
-              </div>
-
-              {/* Performance Rating Scale */}
-              <div>
-                <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
-                  Performance Rating Scales
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Technical Terms */}
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
+                    Important Swimming Terms
+                  </h3>
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      200m IM Times
-                    </h4>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3 bg-green-50 p-2 rounded border-l-4 border-green-500">
-                        <span className="text-sm font-medium text-gray-700 w-32">
-                          Elite:
-                        </span>
-                        <span className="text-sm text-gray-600">
-                          Under 3:00
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3 bg-blue-50 p-2 rounded border-l-4 border-blue-500">
-                        <span className="text-sm font-medium text-gray-700 w-32">
-                          Competitive:
-                        </span>
-                        <span className="text-sm text-gray-600">
-                          3:00 - 3:30
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3 bg-yellow-50 p-2 rounded border-l-4 border-yellow-500">
-                        <span className="text-sm font-medium text-gray-700 w-32">
-                          Development:
-                        </span>
-                        <span className="text-sm text-gray-600">
-                          3:30 - 4:30
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3 bg-red-50 p-2 rounded border-l-4 border-red-500">
-                        <span className="text-sm font-medium text-gray-700 w-32">
-                          Foundational:
-                        </span>
-                        <span className="text-sm text-gray-600">Over 4:30</span>
-                      </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-800 mb-1">
+                        Streamline
+                      </h4>
+                      <p className="text-sm text-gray-700">
+                        Body position with arms extended overhead, hands
+                        overlapped, body straight and tight. Most hydrodynamic
+                        position in swimming.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-800 mb-1">
+                        Breakout
+                      </h4>
+                      <p className="text-sm text-gray-700">
+                        The moment when a swimmer surfaces and begins taking
+                        strokes after being underwater (from dive or push-off).
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-800 mb-1">
+                        Dolphin Kick
+                      </h4>
+                      <p className="text-sm text-gray-700">
+                        Underwater kick where both legs move together in a
+                        wave-like motion. Used in butterfly and underwater
+                        phases.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-800 mb-1">
+                        Negative Split
+                      </h4>
+                      <p className="text-sm text-gray-700">
+                        Swimming the second half of a race faster than the first
+                        half. Shows good pacing and race strategy.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-800 mb-1">
+                        Stroke Count
+                      </h4>
+                      <p className="text-sm text-gray-700">
+                        Number of strokes taken to complete a distance. Lower
+                        count usually means better efficiency (longer, more
+                        powerful strokes).
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-800 mb-1">
+                        Dead Start
+                      </h4>
+                      <p className="text-sm text-gray-700">
+                        Starting in the water (no dive). Tests pure swimming
+                        ability without dive momentum.
+                      </p>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      25m Butterfly Times
-                    </h4>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3 bg-green-50 p-2 rounded border-l-4 border-green-500">
-                        <span className="text-sm font-medium text-gray-700 w-32">
-                          Advanced:
-                        </span>
-                        <span className="text-sm text-gray-600">Under 18s</span>
+                </div>
+
+                {/* How to Use This Dashboard */}
+                <div className="bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-lg border-2 border-cyan-300">
+                  <h3 className="text-2xl font-semibold text-blue-900 mb-4">
+                    🏊 How to Use This Dashboard
+                  </h3>
+                  <ol className="space-y-3 text-gray-800">
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-cyan-600 text-xl">
+                        1.
+                      </span>
+                      <div>
+                        <strong>Start with Team Overview:</strong> See where you
+                        stand compared to teammates. Look at best times (your
+                        goal) and average times (typical performance).
                       </div>
-                      <div className="flex items-center gap-3 bg-blue-50 p-2 rounded border-l-4 border-blue-500">
-                        <span className="text-sm font-medium text-gray-700 w-32">
-                          Intermediate:
-                        </span>
-                        <span className="text-sm text-gray-600">18s - 22s</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-cyan-600 text-xl">
+                        2.
+                      </span>
+                      <div>
+                        <strong>Check Your Individual Performance:</strong>{" "}
+                        Select your name to see detailed graphs of your times.
+                        Look for patterns - are you improving or slowing down?
                       </div>
-                      <div className="flex items-center gap-3 bg-yellow-50 p-2 rounded border-l-4 border-yellow-500">
-                        <span className="text-sm font-medium text-gray-700 w-32">
-                          Development:
-                        </span>
-                        <span className="text-sm text-gray-600">22s - 25s</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-cyan-600 text-xl">
+                        3.
+                      </span>
+                      <div>
+                        <strong>Read Your Analysis:</strong> Carefully review
+                        your strengths, weaknesses, and recommendations. These
+                        are personalized for YOU based on YOUR data.
                       </div>
-                      <div className="flex items-center gap-3 bg-red-50 p-2 rounded border-l-4 border-red-500">
-                        <span className="text-sm font-medium text-gray-700 w-32">
-                          Needs Focus:
-                        </span>
-                        <span className="text-sm text-gray-600">Over 25s</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-cyan-600 text-xl">
+                        4.
+                      </span>
+                      <div>
+                        <strong>Set Specific Goals:</strong> Pick 1-2
+                        recommendations to focus on this week. Small, consistent
+                        improvements lead to big results.
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-cyan-600 text-xl">
+                        5.
+                      </span>
+                      <div>
+                        <strong>Track Your Progress:</strong> Compare your
+                        performance to previous sessions. Celebrate
+                        improvements, identify areas still needing work.
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="font-bold text-cyan-600 text-xl">
+                        6.
+                      </span>
+                      <div>
+                        <strong>Review Session Insights:</strong> Understand
+                        broader patterns across the whole team and why certain
+                        workouts are designed the way they are.
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+
+                {/* Performance Rating Scale */}
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-800 mb-4 border-b-2 border-blue-200 pb-2">
+                    Performance Rating Scales
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-3">
+                      <h4 className="font-semibold text-gray-800 mb-2">
+                        200m IM Times
+                      </h4>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-3 bg-green-50 p-2 rounded border-l-4 border-green-500">
+                          <span className="text-sm font-medium text-gray-700 w-32">
+                            Elite:
+                          </span>
+                          <span className="text-sm text-gray-600">
+                            Under 3:00
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3 bg-blue-50 p-2 rounded border-l-4 border-blue-500">
+                          <span className="text-sm font-medium text-gray-700 w-32">
+                            Competitive:
+                          </span>
+                          <span className="text-sm text-gray-600">
+                            3:00 - 3:30
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3 bg-yellow-50 p-2 rounded border-l-4 border-yellow-500">
+                          <span className="text-sm font-medium text-gray-700 w-32">
+                            Development:
+                          </span>
+                          <span className="text-sm text-gray-600">
+                            3:30 - 4:30
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3 bg-red-50 p-2 rounded border-l-4 border-red-500">
+                          <span className="text-sm font-medium text-gray-700 w-32">
+                            Foundational:
+                          </span>
+                          <span className="text-sm text-gray-600">
+                            Over 4:30
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <h4 className="font-semibold text-gray-800 mb-2">
+                        25m Butterfly Times
+                      </h4>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-3 bg-green-50 p-2 rounded border-l-4 border-green-500">
+                          <span className="text-sm font-medium text-gray-700 w-32">
+                            Advanced:
+                          </span>
+                          <span className="text-sm text-gray-600">
+                            Under 18s
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3 bg-blue-50 p-2 rounded border-l-4 border-blue-500">
+                          <span className="text-sm font-medium text-gray-700 w-32">
+                            Intermediate:
+                          </span>
+                          <span className="text-sm text-gray-600">
+                            18s - 22s
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3 bg-yellow-50 p-2 rounded border-l-4 border-yellow-500">
+                          <span className="text-sm font-medium text-gray-700 w-32">
+                            Development:
+                          </span>
+                          <span className="text-sm text-gray-600">
+                            22s - 25s
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3 bg-red-50 p-2 rounded border-l-4 border-red-500">
+                          <span className="text-sm font-medium text-gray-700 w-32">
+                            Needs Focus:
+                          </span>
+                          <span className="text-sm text-gray-600">
+                            Over 25s
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Questions Section */}
-              <div className="bg-blue-50 p-6 rounded-lg border-2 border-blue-300">
-                <h3 className="text-xl font-semibold text-blue-900 mb-3">
-                  ❓ Questions About Your Data?
-                </h3>
-                <p className="text-gray-700 mb-3">
-                  If you don't understand something on your dashboard or want to
-                  discuss your recommendations:
-                </p>
-                <ul className="space-y-2 text-gray-700">
-                  <li>
-                    • <strong>Ask your coach</strong> during or after practice
-                  </li>
-                  <li>
-                    • <strong>Watch the elite swimmers</strong> in your team to
-                    learn technique
-                  </li>
-                  <li>
-                    • <strong>Record yourself swimming</strong> and compare to
-                    your data
-                  </li>
-                  <li>
-                    • <strong>Set weekly goals</strong> based on your specific
-                    recommendations
-                  </li>
-                  <li>
-                    • <strong>Focus on consistency first</strong>, then speed
-                    will follow
-                  </li>
-                </ul>
-                <p className="text-sm text-blue-800 mt-4 font-medium">
-                  Remember: Everyone improves at their own pace. Your only
-                  competition is yesterday's version of yourself! 💪
-                </p>
+                {/* Questions Section */}
+                <div className="bg-blue-50 p-6 rounded-lg border-2 border-blue-300">
+                  <h3 className="text-xl font-semibold text-blue-900 mb-3">
+                    ❓ Questions About Your Data?
+                  </h3>
+                  <p className="text-gray-700 mb-3">
+                    If you don't understand something on your dashboard or want
+                    to discuss your recommendations:
+                  </p>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>
+                      • <strong>Ask your coach</strong> during or after practice
+                    </li>
+                    <li>
+                      • <strong>Watch the elite swimmers</strong> in your team
+                      to learn technique
+                    </li>
+                    <li>
+                      • <strong>Record yourself swimming</strong> and compare to
+                      your data
+                    </li>
+                    <li>
+                      • <strong>Set weekly goals</strong> based on your specific
+                      recommendations
+                    </li>
+                    <li>
+                      • <strong>Focus on consistency first</strong>, then speed
+                      will follow
+                    </li>
+                  </ul>
+                  <p className="text-sm text-blue-800 mt-4 font-medium">
+                    Remember: Everyone improves at their own pace. Your only
+                    competition is yesterday's version of yourself! 💪
+                  </p>
+                </div>
               </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
+              <h3>Developed by Emmanuel-Paul</h3>
             </div>
           </div>
         )}
