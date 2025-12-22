@@ -123,7 +123,7 @@ const SwimDashboard400m = () => {
     const insights = {
       Jason: {
         strengths: [
-          "Fastest single rep on team at T3 (5:53.65)",
+          "Fastest single at T3 (5:53.65)",
           "Optimal stroke efficiency found: 222 strokes = best time",
           "Capable of sub-6:00 swimming when dialed in",
         ],
@@ -356,7 +356,7 @@ const SwimDashboard400m = () => {
       },
       Raya: {
         strengths: [
-          "Consistent 6:15-6:40 range (excluding T1 data error)",
+          "Consistent 6:15-6:40 range",
           "T4 strong finish (6:20.37) shows mental toughness",
           "Solid mid-pack performer with reliability",
           "Stroke count stable around 250-260 range",
@@ -378,7 +378,7 @@ const SwimDashboard400m = () => {
         ],
         optimal: `Best performance: ${optimal.label} - ${formatTime(
           optimal.time
-        )} at ${optimal.strokes} strokes (Note: T1 data appears erroneous)`,
+        )} at ${optimal.strokes} strokes `,
       },
       Jesse: {
         strengths: [
@@ -526,7 +526,7 @@ const SwimDashboard400m = () => {
                   <p className="text-2xl font-bold text-green-700">
                     {formatTime(Math.min(...teamStats.map((s) => s.bestTime)))}
                   </p>
-                  <p className="text-xs text-gray-500 mt-1">Jason - T3</p>
+                  <p className="text-xs text-gray-500 mt-1">Jadon - T3</p>
                 </div>
                 <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
                   <p className="text-sm text-gray-600 mb-1">
@@ -661,6 +661,9 @@ const SwimDashboard400m = () => {
                   issues.
                 </p>
               </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
+              <h3>Developed by Emmanuel-Paul</h3>
             </div>
           </div>
         )}
@@ -892,223 +895,232 @@ const SwimDashboard400m = () => {
                 </ul>
               </div>
             </div>
+            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
+              <h3>Developed by Emmanuel-Paul</h3>
+            </div>
           </div>
         )}
 
         {activeTab === "key" && (
-          <div className="bg-white rounded-lg shadow-xl p-6">
-            <h2 className="text-2xl font-bold text-blue-900 mb-6">
-              Dashboard Key & Definitions
-            </h2>
+          <div className="space-y-6">
+            <div className="bg-white rounded-lg shadow-xl p-6">
+              <h2 className="text-2xl font-bold text-blue-900 mb-6">
+                Dashboard Key & Definitions
+              </h2>
 
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold text-blue-800 mb-3">
-                  Repetition Labels
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="border-l-4 border-blue-500 pl-4 bg-gray-50 p-3 rounded">
-                    <p className="font-semibold text-gray-800">Baseline</p>
-                    <p className="text-sm text-gray-600">
-                      First 400m swim to establish starting performance level
-                    </p>
-                  </div>
-                  <div className="border-l-4 border-green-500 pl-4 bg-gray-50 p-3 rounded">
-                    <p className="font-semibold text-gray-800">
-                      T1, T2, T3, T4
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Trial 1 through 4 - subsequent 400m repetitions after
-                      baseline
-                    </p>
-                  </div>
-                  <div className="border-l-4 border-red-500 pl-4 bg-gray-50 p-3 rounded">
-                    <p className="font-semibold text-gray-800">
-                      DS (Did Not Swim)
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Swimmer did not complete this repetition
-                    </p>
-                  </div>
-                  <div className="border-l-4 border-purple-500 pl-4 bg-gray-50 p-3 rounded">
-                    <p className="font-semibold text-gray-800">
-                      DNF (Did Not Finish)
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Swimmer started but could not complete the repetition
-                    </p>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-blue-800 mb-3">
+                    Repetition Labels
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="border-l-4 border-blue-500 pl-4 bg-gray-50 p-3 rounded">
+                      <p className="font-semibold text-gray-800">Baseline</p>
+                      <p className="text-sm text-gray-600">
+                        First 400m swim to establish starting performance level
+                      </p>
+                    </div>
+                    <div className="border-l-4 border-green-500 pl-4 bg-gray-50 p-3 rounded">
+                      <p className="font-semibold text-gray-800">
+                        T1, T2, T3, T4
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Trial 1 through 4 - subsequent 400m repetitions after
+                        baseline
+                      </p>
+                    </div>
+                    <div className="border-l-4 border-red-500 pl-4 bg-gray-50 p-3 rounded">
+                      <p className="font-semibold text-gray-800">
+                        DS (Did Not Swim)
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Swimmer did not complete this repetition
+                      </p>
+                    </div>
+                    <div className="border-l-4 border-purple-500 pl-4 bg-gray-50 p-3 rounded">
+                      <p className="font-semibold text-gray-800">
+                        DNF (Did Not Finish)
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Swimmer started but could not complete the repetition
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div>
-                <h3 className="text-xl font-semibold text-blue-800 mb-3">
-                  Key Metrics Explained
-                </h3>
-                <div className="space-y-3">
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <p className="font-semibold text-gray-800">Time</p>
-                    <p className="text-sm text-gray-600">
-                      Total time to complete 400 meters in minutes:seconds
-                      format. Lower is faster.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <p className="font-semibold text-gray-800">
-                      Stroke Count (SC)
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Total number of arm strokes taken to complete 400m. Lower
-                      count usually means better efficiency (more distance per
-                      stroke).
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <p className="font-semibold text-gray-800">
-                      Optimal Stroke Count
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      The stroke count at which you achieved your fastest time.
-                      This is your target efficiency zone.
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <p className="font-semibold text-gray-800">
-                      Distance Per Stroke (DPS)
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      How far you travel with each stroke. Higher DPS = better
-                      technique. Calculate: 400m ÷ stroke count.
-                    </p>
+                <div>
+                  <h3 className="text-xl font-semibold text-blue-800 mb-3">
+                    Key Metrics Explained
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <p className="font-semibold text-gray-800">Time</p>
+                      <p className="text-sm text-gray-600">
+                        Total time to complete 400 meters in minutes:seconds
+                        format. Lower is faster.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <p className="font-semibold text-gray-800">
+                        Stroke Count (SC)
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Total number of arm strokes taken to complete 400m.
+                        Lower count usually means better efficiency (more
+                        distance per stroke).
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <p className="font-semibold text-gray-800">
+                        Optimal Stroke Count
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        The stroke count at which you achieved your fastest
+                        time. This is your target efficiency zone.
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <p className="font-semibold text-gray-800">
+                        Distance Per Stroke (DPS)
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        How far you travel with each stroke. Higher DPS = better
+                        technique. Calculate: 400m ÷ stroke count.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div>
-                <h3 className="text-xl font-semibold text-blue-800 mb-3">
-                  Understanding Stroke Count Zones
-                </h3>
-                <div className="space-y-3">
-                  <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
-                    <p className="font-semibold text-green-800">
-                      Excellent Zone: Under 230 strokes
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Elite efficiency. Long, powerful strokes. Distance per
-                      stroke over 1.74m.
-                    </p>
-                  </div>
-                  <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
-                    <p className="font-semibold text-yellow-800">
-                      Good Zone: 230-260 strokes
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Solid technique with room for improvement. Distance per
-                      stroke 1.54-1.74m.
-                    </p>
-                  </div>
-                  <div className="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
-                    <p className="font-semibold text-red-800">
-                      Needs Work: Over 260 strokes
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Technique issues likely. Short, choppy strokes. Priority:
-                      work on stroke length and efficiency.
-                    </p>
+                <div>
+                  <h3 className="text-xl font-semibold text-blue-800 mb-3">
+                    Understanding Stroke Count Zones
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                      <p className="font-semibold text-green-800">
+                        Excellent Zone: Under 230 strokes
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Elite efficiency. Long, powerful strokes. Distance per
+                        stroke over 1.74m.
+                      </p>
+                    </div>
+                    <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                      <p className="font-semibold text-yellow-800">
+                        Good Zone: 230-260 strokes
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Solid technique with room for improvement. Distance per
+                        stroke 1.54-1.74m.
+                      </p>
+                    </div>
+                    <div className="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                      <p className="font-semibold text-red-800">
+                        Needs Work: Over 260 strokes
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Technique issues likely. Short, choppy strokes.
+                        Priority: work on stroke length and efficiency.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div>
-                <h3 className="text-xl font-semibold text-blue-800 mb-3">
-                  Performance Patterns to Watch
-                </h3>
-                <div className="space-y-3">
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="font-semibold text-gray-800">
-                      Negative Split (Good)
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Getting faster as the set progresses. Shows good pacing
-                      and aerobic fitness.
-                    </p>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="font-semibold text-gray-800">
-                      Positive Split (Concerning)
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Getting slower as the set progresses. May indicate pacing
-                      issues or fitness gaps.
-                    </p>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="font-semibold text-gray-800">
-                      Stroke Count Inflation
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Strokes increasing across reps = technique breakdown under
-                      fatigue. Focus needed.
-                    </p>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="font-semibold text-gray-800">
-                      Stroke Count Reduction
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Strokes decreasing while maintaining or improving speed =
-                      excellent efficiency development.
-                    </p>
+                <div>
+                  <h3 className="text-xl font-semibold text-blue-800 mb-3">
+                    Performance Patterns to Watch
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <p className="font-semibold text-gray-800">
+                        Negative Split (Good)
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Getting faster as the set progresses. Shows good pacing
+                        and aerobic fitness.
+                      </p>
+                    </div>
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <p className="font-semibold text-gray-800">
+                        Positive Split (Concerning)
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Getting slower as the set progresses. May indicate
+                        pacing issues or fitness gaps.
+                      </p>
+                    </div>
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <p className="font-semibold text-gray-800">
+                        Stroke Count Inflation
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Strokes increasing across reps = technique breakdown
+                        under fatigue. Focus needed.
+                      </p>
+                    </div>
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <p className="font-semibold text-gray-800">
+                        Stroke Count Reduction
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Strokes decreasing while maintaining or improving speed
+                        = excellent efficiency development.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-lg mt-6">
-                <h3 className="text-xl font-semibold text-blue-800 mb-3">
-                  How to Use This Dashboard
-                </h3>
-                <ol className="space-y-2 list-decimal list-inside text-gray-700">
-                  <li>
-                    <strong>Team Overview:</strong> See how the whole team
-                    performed. Compare your times to best times and team
-                    average.
-                  </li>
-                  <li>
-                    <strong>Find Your Optimal Stroke Count:</strong> Look at
-                    which rep gave you the best time and note the stroke count -
-                    this is your efficiency target.
-                  </li>
-                  <li>
-                    <strong>Review Your Graphs:</strong> Are you getting faster
-                    or slower? Are your strokes consistent or increasing?
-                  </li>
-                  <li>
-                    <strong>Check the Efficiency Map:</strong> Your best
-                    performance should be in the lower-left area (low strokes,
-                    fast time).
-                  </li>
-                  <li>
-                    <strong>Read Your Recommendations:</strong> Focus on the
-                    specific training tips given for your performance pattern.
-                  </li>
-                  <li>
-                    <strong>Set Goals:</strong> Use your optimal stroke count
-                    and time as targets for your next training session.
-                  </li>
-                </ol>
-              </div>
+                <div className="bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-lg mt-6">
+                  <h3 className="text-xl font-semibold text-blue-800 mb-3">
+                    How to Use This Dashboard
+                  </h3>
+                  <ol className="space-y-2 list-decimal list-inside text-gray-700">
+                    <li>
+                      <strong>Team Overview:</strong> See how the whole team
+                      performed. Compare your times to best times and team
+                      average.
+                    </li>
+                    <li>
+                      <strong>Find Your Optimal Stroke Count:</strong> Look at
+                      which rep gave you the best time and note the stroke count
+                      - this is your efficiency target.
+                    </li>
+                    <li>
+                      <strong>Review Your Graphs:</strong> Are you getting
+                      faster or slower? Are your strokes consistent or
+                      increasing?
+                    </li>
+                    <li>
+                      <strong>Check the Efficiency Map:</strong> Your best
+                      performance should be in the lower-left area (low strokes,
+                      fast time).
+                    </li>
+                    <li>
+                      <strong>Read Your Recommendations:</strong> Focus on the
+                      specific training tips given for your performance pattern.
+                    </li>
+                    <li>
+                      <strong>Set Goals:</strong> Use your optimal stroke count
+                      and time as targets for your next training session.
+                    </li>
+                  </ol>
+                </div>
 
-              <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mt-6">
-                <h3 className="font-bold text-yellow-800 mb-2">
-                  Important Note
-                </h3>
-                <p className="text-sm text-gray-700">
-                  The goal is NOT just to swim fast - it is to swim fast
-                  EFFICIENTLY. A lower stroke count at the same speed means you
-                  are working smarter, not harder. This efficiency will help you
-                  swim faster in races and avoid injury.
-                </p>
+                <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mt-6">
+                  <h3 className="font-bold text-yellow-800 mb-2">
+                    Important Note
+                  </h3>
+                  <p className="text-sm text-gray-700">
+                    The goal is NOT just to swim fast - it is to swim fast
+                    EFFICIENTLY. A lower stroke count at the same speed means
+                    you are working smarter, not harder. This efficiency will
+                    help you swim faster in races and avoid injury.
+                  </p>
+                </div>
               </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
+              <h3>Developed by Emmanuel-Paul</h3>
             </div>
           </div>
         )}
