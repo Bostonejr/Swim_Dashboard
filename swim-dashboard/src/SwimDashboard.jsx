@@ -11,7 +11,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { Users, TrendingDown, Award, AlertCircle } from "lucide-react";
+import { Users, TrendingDown, Award, AlertCircle, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SwimDashboard = () => {
   const [activeTab, setActiveTab] = useState("team");
@@ -479,6 +480,13 @@ const SwimDashboard = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+          <Link
+            to="/"
+            className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-4 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Sessions
+          </Link>
           <h1 className="text-3xl font-bold text-blue-900 mb-2">
             African Sharks Performance Dashboard
           </h1>
@@ -1157,6 +1165,11 @@ const SwimDashboard = () => {
             </div>
           </div>
         )}
+
+        {/* Footer Watermark */}
+        <div className="mt-8 text-center text-blue-400/70 text-sm py-4">
+          <p>Developed by Emmanuel-Paul</p>
+        </div>
       </div>
     </div>
   );

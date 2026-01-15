@@ -22,7 +22,9 @@ import {
   AlertTriangle,
   Award,
   Target,
+  ArrowLeft,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SundayDashboard = () => {
   const [activeTab, setActiveTab] = useState("team");
@@ -619,6 +621,13 @@ const SundayDashboard = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
+          <Link
+            to="/"
+            className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-4 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Sessions
+          </Link>
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">
@@ -1035,9 +1044,6 @@ const SundayDashboard = () => {
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
-              <h3>Developed by Emmanuel-Paul</h3>
-            </div>
           </div>
         )}
 
@@ -1366,9 +1372,6 @@ const SundayDashboard = () => {
                   ))}
                 </ul>
               </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
-              <h3>Developed by Emmanuel-Paul</h3>
             </div>
           </div>
         )}
@@ -1733,9 +1736,6 @@ const SundayDashboard = () => {
                   </p>
                 </div>
               </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
-              <h3>Developed by Emmanuel-Paul</h3>
             </div>
           </div>
         )}
@@ -2342,11 +2342,13 @@ const SundayDashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
-              <h3>Developed by Emmanuel-Paul</h3>
-            </div>
           </div>
         )}
+
+        {/* Footer Watermark */}
+        <div className="mt-8 text-center text-cyan-300/70 text-sm py-4">
+          <p>Developed by Emmanuel-Paul</p>
+        </div>
       </div>
     </div>
   );

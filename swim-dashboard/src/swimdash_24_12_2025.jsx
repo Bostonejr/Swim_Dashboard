@@ -18,6 +18,8 @@ import {
   PolarRadiusAxis,
   Radar,
 } from "recharts";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const WednesdayDashboard = () => {
   const [activeTab, setActiveTab] = useState("team");
@@ -444,6 +446,13 @@ const WednesdayDashboard = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-xl p-6 mb-6">
+          <Link
+            to="/"
+            className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-4 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Sessions
+          </Link>
           <h1 className="text-3xl font-bold text-blue-900 mb-2">
             African Sharks - Wednesday Session Analysis
           </h1>
@@ -1236,6 +1245,11 @@ const WednesdayDashboard = () => {
             </div>
           </div>
         )}
+
+        {/* Footer Watermark */}
+        <div className="mt-8 text-center text-cyan-300/70 text-sm py-4">
+          <p>Developed by Emmanuel-Paul</p>
+        </div>
       </div>
     </div>
   );

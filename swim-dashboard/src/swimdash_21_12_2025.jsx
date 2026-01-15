@@ -14,6 +14,8 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SwimDashboard400m = () => {
   const [activeTab, setActiveTab] = useState("team");
@@ -435,6 +437,13 @@ const SwimDashboard400m = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900 p-4">
       <div className="max-w-7xl mx-auto">
         <div className="bg-white rounded-lg shadow-xl p-6 mb-6">
+          <Link
+            to="/"
+            className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-4 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Sessions
+          </Link>
           <h1 className="text-3xl font-bold text-blue-900 mb-2">
             African Sharks 4x400m Freestyle Analysis
           </h1>
@@ -661,9 +670,6 @@ const SwimDashboard400m = () => {
                   issues.
                 </p>
               </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
-              <h3>Developed by Emmanuel-Paul</h3>
             </div>
           </div>
         )}
@@ -895,9 +901,6 @@ const SwimDashboard400m = () => {
                 </ul>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
-              <h3>Developed by Emmanuel-Paul</h3>
-            </div>
           </div>
         )}
 
@@ -1119,11 +1122,13 @@ const SwimDashboard400m = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-2xl p-6 mb-6">
-              <h3>Developed by Emmanuel-Paul</h3>
-            </div>
           </div>
         )}
+
+        {/* Footer Watermark */}
+        <div className="mt-8 text-center text-cyan-300/70 text-sm py-4">
+          <p>Developed by Emmanuel-Paul</p>
+        </div>
       </div>
     </div>
   );
