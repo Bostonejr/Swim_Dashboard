@@ -18,6 +18,24 @@ import {
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
+// ─── RESPONSIVE HOOK ────────────────────────────────────────────────────────
+const useWindowWidth = () => {
+  const [width, setWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1024,
+  );
+  useEffect(() => {
+    const handler = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+  return width;
+};
+const cols = (width, desktop, tablet, mobile) => {
+  if (width < 480) return mobile || "1fr";
+  if (width < 768) return tablet || desktop;
+  return desktop;
+};
+
 // ─── RAW DATA ───────────────────────────────────────────────────────────────
 const SWIMMERS = {
   Jadon: {
@@ -546,6 +564,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 // ─── TEAM TAB ─────────────────────────────────────────────────────────────
 const TeamTab = () => {
+  const w = useWindowWidth();
   const butterflySummary = ["Jadon", "Jesse", "Raya", "Ronell"];
   const breastSummary = ["Kofi", "Raphaell", "Jada", "Afia", "Abena"];
 
@@ -629,7 +648,12 @@ const TeamTab = () => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
+            gridTemplateColumns: cols(
+              w,
+              "repeat(4, 1fr)",
+              "repeat(2, 1fr)",
+              "repeat(2, 1fr)",
+            ),
             gap: 12,
             marginTop: 20,
           }}
@@ -880,7 +904,11 @@ const TeamTab = () => {
           🔍 Coach's Team-Level Observations
         </h2>
         <div
-          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}
+          style={{
+            display: "grid",
+            gridTemplateColumns: cols(w, "1fr 1fr", "1fr", "1fr"),
+            gap: 16,
+          }}
         >
           <div
             style={{
@@ -961,6 +989,7 @@ const TeamTab = () => {
 
 // ─── INDIVIDUAL TAB ────────────────────────────────────────────────────────
 const IndividualTab = () => {
+  const w = useWindowWidth();
   const [selected, setSelected] = useState("Jadon");
   const d = SWIMMERS[selected];
   const insight = INSIGHTS[d.insight];
@@ -1026,7 +1055,12 @@ const IndividualTab = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
+          gridTemplateColumns: cols(
+            w,
+            "repeat(4, 1fr)",
+            "repeat(2, 1fr)",
+            "repeat(2, 1fr)",
+          ),
           gap: 12,
         }}
       >
@@ -1200,7 +1234,12 @@ const IndividualTab = () => {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "1fr 1fr 1fr",
+                  gridTemplateColumns: cols(
+                    w,
+                    "1fr 1fr 1fr",
+                    "1fr 1fr 1fr",
+                    "1fr",
+                  ),
                   gap: 12,
                 }}
               >
@@ -1372,7 +1411,12 @@ const IndividualTab = () => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: cols(
+              w,
+              "repeat(3, 1fr)",
+              "repeat(3, 1fr)",
+              "1fr",
+            ),
             gap: 12,
           }}
         >
@@ -1443,7 +1487,12 @@ const IndividualTab = () => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: cols(
+              w,
+              "repeat(3, 1fr)",
+              "repeat(2, 1fr)",
+              "1fr",
+            ),
             gap: 12,
           }}
         >
@@ -1535,7 +1584,7 @@ const IndividualTab = () => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: cols(w, "1fr 1fr", "1fr", "1fr"),
             gap: 16,
             marginBottom: 20,
           }}
@@ -1654,314 +1703,334 @@ const IndividualTab = () => {
 };
 
 // ─── KEY TAB ──────────────────────────────────────────────────────────────
-const KeyTab = () => (
-  <div
-    style={{
-      background: "#1e293b",
-      borderRadius: 16,
-      padding: 24,
-      display: "flex",
-      flexDirection: "column",
-      gap: 24,
-    }}
-  >
-    <div>
-      <h2
-        style={{
-          color: "#f1f5f9",
-          fontSize: 22,
-          fontWeight: 800,
-          marginBottom: 4,
-        }}
-      >
-        Dashboard Key & Guide
-      </h2>
-      <p style={{ color: "#64748b", fontSize: 13 }}>
-        Everything you need to understand the data — no swimming jargon left
-        unexplained.
-      </p>
-    </div>
-
-    <div>
-      <h3
-        style={{
-          color: "#93c5fd",
-          fontSize: 16,
-          fontWeight: 700,
-          marginBottom: 12,
-        }}
-      >
-        Session Information
-      </h3>
-      <div
-        style={{
-          background: "#0f172a",
-          borderRadius: 10,
-          padding: 16,
-          color: "#94a3b8",
-          fontSize: 13,
-          lineHeight: 2,
-        }}
-      >
-        <div>
-          <strong style={{ color: "#f1f5f9" }}>Workout:</strong> 10 × 50m Fly or
-          Breaststroke (each swimmer swam their designated stroke)
-        </div>
-        <div>
-          <strong style={{ color: "#f1f5f9" }}>Date:</strong> Sunday, March 8,
-          2026
-        </div>
-        <div>
-          <strong style={{ color: "#f1f5f9" }}>Butterfly swimmers:</strong>{" "}
-          Jesse, Jadon, Ronell, Raya
-        </div>
-        <div>
-          <strong style={{ color: "#f1f5f9" }}>Breaststroke swimmers:</strong>{" "}
-          Abena, Afia, Kofi, Raphael, Jada
-        </div>
-        <div>
-          <strong style={{ color: "#f1f5f9" }}>Goal:</strong> Test race-stroke
-          endurance, technique under fatigue, and pacing strategy across 10
-          repetitions
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <h3
-        style={{
-          color: "#93c5fd",
-          fontSize: 16,
-          fontWeight: 700,
-          marginBottom: 12,
-        }}
-      >
-        Abbreviations
-      </h3>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: 8,
-        }}
-      >
-        {[
-          ["T1", "Time of Rep 1 — the very first swim"],
-          ["T10", "Time of Rep 10 — the final swim"],
-          ["Avg / Average", "Mathematical mean: add all times, divide by 10"],
-          ["Rep", "Repetition — one 50m swim"],
-          ["Sc", "Stroke Count — number of strokes in one 50m"],
-          ["σ (StdDev)", "Standard Deviation — how much times vary"],
-          ["s", "Seconds"],
-          ["m", "Meters"],
-          ["Fly", "Butterfly stroke"],
-          ["Breast", "Breaststroke"],
-          ["n/a", "Data not recorded for that rep"],
-          ["DNS", "Did Not Start (swimmer stopped early)"],
-        ].map(([abbr, def]) => (
-          <div
-            key={abbr}
-            style={{
-              background: "#0f172a",
-              borderRadius: 8,
-              padding: "10px 14px",
-              display: "flex",
-              gap: 10,
-            }}
-          >
-            <span
-              style={{
-                color: "#60a5fa",
-                fontWeight: 700,
-                minWidth: 80,
-                fontSize: 13,
-              }}
-            >
-              {abbr}
-            </span>
-            <span style={{ color: "#94a3b8", fontSize: 13 }}>{def}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <div>
-      <h3
-        style={{
-          color: "#93c5fd",
-          fontSize: 16,
-          fontWeight: 700,
-          marginBottom: 12,
-        }}
-      >
-        Key Metrics Explained
-      </h3>
-      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-        {[
-          {
-            term: "Fatigue Index",
-            color: "#ef4444",
-            def: "The % difference between your last 3 reps average and first 3 reps average. NEGATIVE = you got faster (great!). POSITIVE = you slowed down.",
-          },
-          {
-            term: "T1 vs Average",
-            color: "#f59e0b",
-            def: "If T1 is ABOVE average, you started slowly — you warmed into your pace. If T1 is BELOW average, you started too fast and likely faded later.",
-          },
-          {
-            term: "T10 vs Average",
-            color: "#10b981",
-            def: "If T10 is BELOW average, you finished faster than your own typical pace — a sign of excellent endurance. If above, fatigue caught up.",
-          },
-          {
-            term: "Average Zone (Closest Reps)",
-            color: "#8b5cf6",
-            def: "The 3 reps closest to your average. If they fall early (Reps 1-4), you peaked early. Middle (5-7) = balanced. Late (8-10) = your best effort came at the end — outstanding.",
-          },
-          {
-            term: "Stroke Efficiency (s/stroke)",
-            color: "#06b6d4",
-            def: "Seconds per stroke. Higher means each stroke travels further. But it must be balanced — too slow per stroke = poor overall time.",
-          },
-          {
-            term: "Stroke Trend",
-            color: "#f59e0b",
-            def: "Are your stroke counts going up or down across the set? Decreasing = improving technique. Increasing = fatigue breaking down form.",
-          },
-          {
-            term: "Rep-to-Rep Improvements",
-            color: "#10b981",
-            def: "How many consecutive rep pairs were faster than the previous. Out of 9 transitions, 7+ improvements = strong progressive performance.",
-          },
-        ].map(({ term, color, def }) => (
-          <div
-            key={term}
-            style={{
-              background: "#0f172a",
-              borderRadius: 10,
-              padding: 14,
-              borderLeft: `3px solid ${color}`,
-            }}
-          >
-            <p
-              style={{ color, fontWeight: 700, marginBottom: 4, fontSize: 14 }}
-            >
-              {term}
-            </p>
-            <p style={{ color: "#94a3b8", fontSize: 13, lineHeight: 1.6 }}>
-              {def}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <div>
-      <h3
-        style={{
-          color: "#93c5fd",
-          fontSize: 16,
-          fontWeight: 700,
-          marginBottom: 12,
-        }}
-      >
-        Understanding the Graphs
-      </h3>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-        {[
-          [
-            "Time Chart (line graph)",
-            "Each dot is one rep. The dashed line is your average. Dots below the line = faster than your average. Dots above = slower.",
-          ],
-          [
-            "Stroke Count (bar chart)",
-            "Each bar is one rep. Shorter bars = fewer strokes = better efficiency. Look for bars growing taller over time — this signals fatigue.",
-          ],
-          [
-            "Team Best vs Average (area chart)",
-            "The top line shows the team's fastest time each rep. The lower shaded area tracks the team's average. A narrowing gap = team getting more consistent.",
-          ],
-          [
-            "Consistency (σ)",
-            "Think of it like a report card for steadiness. Under 2s = A+. 2-4s = B. 4-6s = C. Over 6s = needs work.",
-          ],
-        ].map(([title, desc]) => (
-          <div
-            key={title}
-            style={{ background: "#0f172a", borderRadius: 10, padding: 14 }}
-          >
-            <p
-              style={{
-                color: "#f1f5f9",
-                fontWeight: 700,
-                fontSize: 13,
-                marginBottom: 6,
-              }}
-            >
-              {title}
-            </p>
-            <p style={{ color: "#64748b", fontSize: 13, lineHeight: 1.6 }}>
-              {desc}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-
+const KeyTab = () => {
+  const w = useWindowWidth();
+  return (
     <div
       style={{
-        background: "linear-gradient(135deg, #1e3a5f, #0f172a)",
-        border: "1px solid #1e3a5f",
-        borderRadius: 12,
-        padding: 20,
+        background: "#1e293b",
+        borderRadius: 16,
+        padding: w < 480 ? 16 : 24,
+        display: "flex",
+        flexDirection: "column",
+        gap: 24,
       }}
     >
-      <h3
+      <div>
+        <h2
+          style={{
+            color: "#f1f5f9",
+            fontSize: 22,
+            fontWeight: 800,
+            marginBottom: 4,
+          }}
+        >
+          Dashboard Key & Guide
+        </h2>
+        <p style={{ color: "#64748b", fontSize: 13 }}>
+          Everything you need to understand the data — no swimming jargon left
+          unexplained.
+        </p>
+      </div>
+
+      <div>
+        <h3
+          style={{
+            color: "#93c5fd",
+            fontSize: 16,
+            fontWeight: 700,
+            marginBottom: 12,
+          }}
+        >
+          Session Information
+        </h3>
+        <div
+          style={{
+            background: "#0f172a",
+            borderRadius: 10,
+            padding: 16,
+            color: "#94a3b8",
+            fontSize: 13,
+            lineHeight: 2,
+          }}
+        >
+          <div>
+            <strong style={{ color: "#f1f5f9" }}>Workout:</strong> 10 × 50m Fly
+            or Breaststroke (each swimmer swam their designated stroke)
+          </div>
+          <div>
+            <strong style={{ color: "#f1f5f9" }}>Date:</strong> Sunday, March 8,
+            2026
+          </div>
+          <div>
+            <strong style={{ color: "#f1f5f9" }}>Butterfly swimmers:</strong>{" "}
+            Jesse, Jadon, Ronell, Raya
+          </div>
+          <div>
+            <strong style={{ color: "#f1f5f9" }}>Breaststroke swimmers:</strong>{" "}
+            Abena, Afia, Kofi, Raphael, Jada
+          </div>
+          <div>
+            <strong style={{ color: "#f1f5f9" }}>Goal:</strong> Test race-stroke
+            endurance, technique under fatigue, and pacing strategy across 10
+            repetitions
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3
+          style={{
+            color: "#93c5fd",
+            fontSize: 16,
+            fontWeight: 700,
+            marginBottom: 12,
+          }}
+        >
+          Abbreviations
+        </h3>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: cols(
+              w,
+              "repeat(2, 1fr)",
+              "repeat(2, 1fr)",
+              "1fr",
+            ),
+            gap: 8,
+          }}
+        >
+          {[
+            ["T1", "Time of Rep 1 — the very first swim"],
+            ["T10", "Time of Rep 10 — the final swim"],
+            ["Avg / Average", "Mathematical mean: add all times, divide by 10"],
+            ["Rep", "Repetition — one 50m swim"],
+            ["Sc", "Stroke Count — number of strokes in one 50m"],
+            ["σ (StdDev)", "Standard Deviation — how much times vary"],
+            ["s", "Seconds"],
+            ["m", "Meters"],
+            ["Fly", "Butterfly stroke"],
+            ["Breast", "Breaststroke"],
+            ["n/a", "Data not recorded for that rep"],
+            ["DNS", "Did Not Start (swimmer stopped early)"],
+          ].map(([abbr, def]) => (
+            <div
+              key={abbr}
+              style={{
+                background: "#0f172a",
+                borderRadius: 8,
+                padding: "10px 14px",
+                display: "flex",
+                gap: 10,
+              }}
+            >
+              <span
+                style={{
+                  color: "#60a5fa",
+                  fontWeight: 700,
+                  minWidth: 80,
+                  fontSize: 13,
+                }}
+              >
+                {abbr}
+              </span>
+              <span style={{ color: "#94a3b8", fontSize: 13 }}>{def}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3
+          style={{
+            color: "#93c5fd",
+            fontSize: 16,
+            fontWeight: 700,
+            marginBottom: 12,
+          }}
+        >
+          Key Metrics Explained
+        </h3>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {[
+            {
+              term: "Fatigue Index",
+              color: "#ef4444",
+              def: "The % difference between your last 3 reps average and first 3 reps average. NEGATIVE = you got faster (great!). POSITIVE = you slowed down.",
+            },
+            {
+              term: "T1 vs Average",
+              color: "#f59e0b",
+              def: "If T1 is ABOVE average, you started slowly — you warmed into your pace. If T1 is BELOW average, you started too fast and likely faded later.",
+            },
+            {
+              term: "T10 vs Average",
+              color: "#10b981",
+              def: "If T10 is BELOW average, you finished faster than your own typical pace — a sign of excellent endurance. If above, fatigue caught up.",
+            },
+            {
+              term: "Average Zone (Closest Reps)",
+              color: "#8b5cf6",
+              def: "The 3 reps closest to your average. If they fall early (Reps 1-4), you peaked early. Middle (5-7) = balanced. Late (8-10) = your best effort came at the end — outstanding.",
+            },
+            {
+              term: "Stroke Efficiency (s/stroke)",
+              color: "#06b6d4",
+              def: "Seconds per stroke. Higher means each stroke travels further. But it must be balanced — too slow per stroke = poor overall time.",
+            },
+            {
+              term: "Stroke Trend",
+              color: "#f59e0b",
+              def: "Are your stroke counts going up or down across the set? Decreasing = improving technique. Increasing = fatigue breaking down form.",
+            },
+            {
+              term: "Rep-to-Rep Improvements",
+              color: "#10b981",
+              def: "How many consecutive rep pairs were faster than the previous. Out of 9 transitions, 7+ improvements = strong progressive performance.",
+            },
+          ].map(({ term, color, def }) => (
+            <div
+              key={term}
+              style={{
+                background: "#0f172a",
+                borderRadius: 10,
+                padding: 14,
+                borderLeft: `3px solid ${color}`,
+              }}
+            >
+              <p
+                style={{
+                  color,
+                  fontWeight: 700,
+                  marginBottom: 4,
+                  fontSize: 14,
+                }}
+              >
+                {term}
+              </p>
+              <p style={{ color: "#94a3b8", fontSize: 13, lineHeight: 1.6 }}>
+                {def}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3
+          style={{
+            color: "#93c5fd",
+            fontSize: 16,
+            fontWeight: 700,
+            marginBottom: 12,
+          }}
+        >
+          Understanding the Graphs
+        </h3>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: cols(w, "1fr 1fr", "1fr", "1fr"),
+            gap: 10,
+          }}
+        >
+          {[
+            [
+              "Time Chart (line graph)",
+              "Each dot is one rep. The dashed line is your average. Dots below the line = faster than your average. Dots above = slower.",
+            ],
+            [
+              "Stroke Count (bar chart)",
+              "Each bar is one rep. Shorter bars = fewer strokes = better efficiency. Look for bars growing taller over time — this signals fatigue.",
+            ],
+            [
+              "Team Best vs Average (area chart)",
+              "The top line shows the team's fastest time each rep. The lower shaded area tracks the team's average. A narrowing gap = team getting more consistent.",
+            ],
+            [
+              "Consistency (σ)",
+              "Think of it like a report card for steadiness. Under 2s = A+. 2-4s = B. 4-6s = C. Over 6s = needs work.",
+            ],
+          ].map(([title, desc]) => (
+            <div
+              key={title}
+              style={{ background: "#0f172a", borderRadius: 10, padding: 14 }}
+            >
+              <p
+                style={{
+                  color: "#f1f5f9",
+                  fontWeight: 700,
+                  fontSize: 13,
+                  marginBottom: 6,
+                }}
+              >
+                {title}
+              </p>
+              <p style={{ color: "#64748b", fontSize: 13, lineHeight: 1.6 }}>
+                {desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div
         style={{
-          color: "#93c5fd",
-          fontSize: 16,
-          fontWeight: 700,
-          marginBottom: 10,
+          background: "linear-gradient(135deg, #1e3a5f, #0f172a)",
+          border: "1px solid #1e3a5f",
+          borderRadius: 12,
+          padding: 20,
         }}
       >
-        💡 How to Use This Dashboard
-      </h3>
-      <ol
-        style={{
-          color: "#94a3b8",
-          fontSize: 13,
-          lineHeight: 2.2,
-          paddingLeft: 20,
-        }}
-      >
-        <li>
-          <strong style={{ color: "#f1f5f9" }}>Team tab:</strong> See how
-          everyone performed together. Compare your average to the team average.
-        </li>
-        <li>
-          <strong style={{ color: "#f1f5f9" }}>Individual tab:</strong> Select
-          your name to see only your data — times, strokes, and your personal
-          insights.
-        </li>
-        <li>
-          <strong style={{ color: "#f1f5f9" }}>Average Zone:</strong> Check if
-          your best swims happen early, middle, or late — and what it tells you
-          about your pacing.
-        </li>
-        <li>
-          <strong style={{ color: "#f1f5f9" }}>T1 vs T10:</strong> If your T10
-          is faster, you paced well. If slower, you need to start more
-          conservatively.
-        </li>
-        <li>
-          <strong style={{ color: "#f1f5f9" }}>Recommendations:</strong> Read
-          the numbered training tips under your profile — they are based on your
-          actual data.
-        </li>
-      </ol>
+        <h3
+          style={{
+            color: "#93c5fd",
+            fontSize: 16,
+            fontWeight: 700,
+            marginBottom: 10,
+          }}
+        >
+          💡 How to Use This Dashboard
+        </h3>
+        <ol
+          style={{
+            color: "#94a3b8",
+            fontSize: 13,
+            lineHeight: 2.2,
+            paddingLeft: 20,
+          }}
+        >
+          <li>
+            <strong style={{ color: "#f1f5f9" }}>Team tab:</strong> See how
+            everyone performed together. Compare your average to the team
+            average.
+          </li>
+          <li>
+            <strong style={{ color: "#f1f5f9" }}>Individual tab:</strong> Select
+            your name to see only your data — times, strokes, and your personal
+            insights.
+          </li>
+          <li>
+            <strong style={{ color: "#f1f5f9" }}>Average Zone:</strong> Check if
+            your best swims happen early, middle, or late — and what it tells
+            you about your pacing.
+          </li>
+          <li>
+            <strong style={{ color: "#f1f5f9" }}>T1 vs T10:</strong> If your T10
+            is faster, you paced well. If slower, you need to start more
+            conservatively.
+          </li>
+          <li>
+            <strong style={{ color: "#f1f5f9" }}>Recommendations:</strong> Read
+            the numbered training tips under your profile — they are based on
+            your actual data.
+          </li>
+        </ol>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 // ─── MAIN COMPONENT ────────────────────────────────────────────────────────
 export default function BestAverageSet_Fly_Breast() {

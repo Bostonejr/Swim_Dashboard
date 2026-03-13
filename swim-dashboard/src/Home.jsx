@@ -48,7 +48,7 @@ const Home = () => {
       id: "original",
       route: "/dashboard/original",
       title: "Start Techniques",
-      date: "Generic Analysis",
+      date: "Sunday, September 28, 2025",
       type: "Technique Focus",
       description: "Start techniques, turns, and dive variations",
       swimmers: 10,
