@@ -5,14 +5,24 @@ import { Calendar, Users, Activity, ChevronRight } from "lucide-react";
 const Home = () => {
   const sessions = [
     {
+      id: "08-03-2026",
+      route: "/dashboard/08-03-2026",
+      title: "Best Average Set: Butterfly & Breaststroke",
+      date: "Sunday, March 08, 2026",
+      type: "10 x 50m Butterfly/Breaststroke",
+      description: "Best Average set with Consistency/Endurance analysis",
+      swimmers: 9,
+      highlight: true,
+    },
+    {
       id: "24-12-2025",
       route: "/dashboard/24-12-2025",
-      title: "Wednesday Session",
+      title: "Latic Tolerance Set",
       date: "Wednesday, December 24, 2025",
       type: "12 x 50m Freestyle",
       description: "Long endurance set with sprint analysis",
       swimmers: 18,
-      highlight: true,
+      highlight: false,
     },
     {
       id: "21-12-2025",
@@ -31,7 +41,7 @@ const Home = () => {
       date: "Sunday, October 5, 2025",
       type: "Individual Medley",
       description: "4 repetitions of IM with pace analysis",
-      swimmers: null,
+      swimmers: 10,
       highlight: false,
     },
     {
@@ -41,7 +51,7 @@ const Home = () => {
       date: "Generic Analysis",
       type: "Technique Focus",
       description: "Start techniques, turns, and dive variations",
-      swimmers: null,
+      swimmers: 10,
       highlight: false,
     },
   ];
@@ -92,7 +102,9 @@ const Home = () => {
                   {session.swimmers && (
                     <div className="flex items-center text-gray-600">
                       <Users className="w-4 h-4 mr-2" />
-                      <span className="text-sm">{session.swimmers} swimmers</span>
+                      <span className="text-sm">
+                        {session.swimmers} swimmers
+                      </span>
                     </div>
                   )}
                 </div>
