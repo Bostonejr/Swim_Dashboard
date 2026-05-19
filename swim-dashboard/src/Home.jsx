@@ -5,6 +5,28 @@ import { Calendar, Users, Activity, ChevronRight } from "lucide-react";
 const Home = () => {
   const sessions = [
     {
+      id: "12-04-2026",
+      route: "/dashboard/09-05-2026",
+      title: "Top-End Sprint Set: 10 x 50M (Freestyle) ...Converted from 34M",
+      date: "Saturday, May 09, 2026",
+      type: "10 x 50m Freesytle",
+      description:
+        "Top-End Sprint for Freestyle with Consistency/Endurance analysis",
+      swimmers: 6,
+      highlight: true,
+    },
+    {
+      id: "12-04-2026",
+      route: "/dashboard/12-04-2026",
+      title: "Best Average Set: 20 x 100M (Freestyle)",
+      date: "Sunday, March 12, 2026",
+      type: "20 x 100m Freesytle",
+      description:
+        "Best Average for Freestyle set with Consistency/Endurance analysis",
+      swimmers: 9,
+      highlight: false,
+    },
+    {
       id: "08-03-2026",
       route: "/dashboard/08-03-2026",
       title: "Best Average Set: Butterfly & Breaststroke",
@@ -12,7 +34,7 @@ const Home = () => {
       type: "10 x 50m Butterfly/Breaststroke",
       description: "Best Average set with Consistency/Endurance analysis",
       swimmers: 9,
-      highlight: true,
+      highlight: false,
     },
     {
       id: "24-12-2025",

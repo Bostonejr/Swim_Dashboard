@@ -387,7 +387,7 @@ const INSIGHTS = {
     ],
   },
   volatile_butterfly: {
-    note: "Raya is the team's second-best butterfly swimmer by average, but the Rep 9 crash (78.17s — her worst time) is alarming. She shares Jadon's 'crash on Rep 9' pattern, suggesting a team-wide mid-set fatigue wall around Rep 9.",
+    note: "Raya is the team's second-best butterfly swimmer by average, but the Rep 9 crash (78.17s — his worst time) is alarming. He shares Jadon's 'crash on Rep 9' pattern, suggesting a team-wide mid-set fatigue wall around Rep 9.",
     strengths: [
       "Solid average of 67.06s — second best butterfly swimmer on team",
       "T10 was 7.0% faster than average — finished well when recovered",
